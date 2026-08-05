@@ -399,6 +399,7 @@ summary:focus-visible {
 
 .service-card p {
   margin: 0;
+  padding-right: 42px;
   color: rgba(248, 243, 237, 0.72);
   font-size: 0.82rem;
   line-height: 1.5;
@@ -410,9 +411,15 @@ summary:focus-visible {
 
 .service-arrow {
   position: absolute;
-  right: 28px;
-  bottom: 28px;
+  right: clamp(22px, 2.1vw, 36px);
+  bottom: 30px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
   font-size: 1.15rem;
+  line-height: 1;
+  text-align: center;
   transition: transform 190ms ease;
 }
 
