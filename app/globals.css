@@ -1,15 +1,15 @@
 :root {
-  --espresso: #2b1716;
-  --espresso-deep: #21100f;
-  --rose: #8f5057;
-  --rose-deep: #713b42;
-  --blush: #edd8d7;
-  --blush-light: #f4e7e4;
-  --pearl: #f8f3ed;
-  --paper: #fffcf7;
-  --ink: #241515;
-  --muted: #6f5f5c;
-  --line: rgba(43, 23, 22, 0.18);
+  --espresso: #1b0f06;
+  --espresso-deep: #120903;
+  --rose: #daa87a;
+  --rose-deep: #b97e4d;
+  --blush: #ebd7c3;
+  --blush-light: #f6f0e9;
+  --pearl: #f6f0e9;
+  --paper: #fffdf9;
+  --ink: #1b0f06;
+  --muted: #725a47;
+  --line: rgba(27, 15, 6, 0.18);
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
     Palatino, Georgia, serif;
   --font-sans: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
@@ -40,7 +40,7 @@ a {
 
 a:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #bd7f43;
+  outline: 3px solid #daa87a;
   outline-offset: 5px;
 }
 
@@ -67,7 +67,7 @@ summary:focus-visible {
   gap: 36px;
   padding: 0 clamp(24px, 5vw, 84px);
   border-bottom: 1px solid var(--line);
-  background: rgba(248, 243, 237, 0.96);
+  background: rgba(246, 240, 233, 0.96);
   position: relative;
   z-index: 10;
 }
@@ -293,7 +293,7 @@ summary:focus-visible {
   bottom: -8vw;
   left: -2vw;
   margin: 0;
-  color: rgba(143, 80, 87, 0.09);
+  color: rgba(218, 168, 122, 0.12);
   font-family: var(--font-display);
   font-size: clamp(10rem, 24vw, 27rem);
   letter-spacing: -0.08em;
@@ -342,7 +342,7 @@ summary:focus-visible {
 .service-card {
   min-height: 300px;
   padding: 30px clamp(22px, 2.1vw, 36px);
-  border-right: 1px solid rgba(248, 243, 237, 0.18);
+  border-right: 1px solid rgba(246, 240, 233, 0.18);
 }
 
 .service-intro {
@@ -352,7 +352,7 @@ summary:focus-visible {
 }
 
 .service-intro .eyebrow {
-  color: #cf969b;
+  color: #daa87a;
 }
 
 .service-intro h2 {
@@ -379,7 +379,7 @@ summary:focus-visible {
 .service-meta {
   display: flex;
   gap: 9px;
-  color: #d3b5b4;
+  color: #ebd7c3;
   font-size: 0.58rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -400,7 +400,7 @@ summary:focus-visible {
 .service-card p {
   margin: 0;
   padding-right: 42px;
-  color: rgba(248, 243, 237, 0.72);
+  color: rgba(246, 240, 233, 0.72);
   font-size: 0.82rem;
   line-height: 1.5;
 }
@@ -516,7 +516,7 @@ summary:focus-visible {
 }
 
 .membership .eyebrow {
-  color: #efc8c9;
+  color: #ebd7c3;
 }
 
 .membership h2 {
@@ -540,9 +540,9 @@ summary:focus-visible {
   height: 330px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(248, 243, 237, 0.25);
+  border: 1px solid rgba(246, 240, 233, 0.25);
   border-radius: 50%;
-  color: rgba(248, 243, 237, 0.08);
+  color: rgba(246, 240, 233, 0.08);
   font-family: var(--font-display);
   font-size: 9rem;
   font-style: italic;
@@ -686,11 +686,11 @@ details p {
 }
 
 .contact-title-wrap {
-  border-right: 1px solid rgba(248, 243, 237, 0.18);
+  border-right: 1px solid rgba(246, 240, 233, 0.18);
 }
 
 .contact .eyebrow {
-  color: #d79ca1;
+  color: #daa87a;
 }
 
 .contact h2 {
@@ -707,7 +707,7 @@ details p {
 
 .detail-label {
   margin: 0 0 16px;
-  color: #d79ca1;
+  color: #daa87a;
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.15em;
@@ -795,7 +795,7 @@ address {
 
   .service-card {
     min-height: 260px;
-    border-top: 1px solid rgba(248, 243, 237, 0.18);
+    border-top: 1px solid rgba(246, 240, 233, 0.18);
   }
 
   .contact-details {
@@ -874,7 +874,7 @@ address {
 
   .contact-title-wrap {
     border-right: 0;
-    border-bottom: 1px solid rgba(248, 243, 237, 0.18);
+    border-bottom: 1px solid rgba(246, 240, 233, 0.18);
   }
 
   .contact-details {
