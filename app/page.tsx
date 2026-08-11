@@ -358,11 +358,11 @@ export default function Home() {
               <address>
                 35 Water St S, Unit 101
                 <br />
-                Cambridge, ON N1R 8R9
+                Cambridge, ON N1R 3C7
               </address>
               <a
                 className="text-link"
-                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+8R9"
+                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+3C7"
                 target="_blank"
                 rel="noreferrer"
               >
