@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Where is MK Studio located?",
     answer:
-      "MK Studio is inside TBS at 35 Water Street South, Suite 101, in downtown Cambridge, Ontario.",
+      "MK Studio is inside TBS at 35 Water Street South, Unit 101, in downtown Cambridge, Ontario.",
   },
   {
     question: "Is financing available?",
@@ -129,14 +129,14 @@ export default function Home() {
 
             <ul className="trust-list" aria-label="Studio credentials">
               <li>Certified Medical Aesthetician</li>
-              <li>6+ years of experience</li>
+              <li>8+ years of experience</li>
               <li>Cambridge, Ontario</li>
             </ul>
           </div>
 
           <figure className="hero-portrait">
             <img
-              src="/mk-studio/masoda-scrubs.jpeg"
+              src="/mk-studio/masoda-scrubs-hd.png"
               alt="Masoda, founder and medical aesthetician at MK Studio"
               width="213"
               height="320"
@@ -196,7 +196,7 @@ export default function Home() {
               the person—not the trend.
             </p>
             <p>
-              With more than six years in beauty and aesthetics, Masoda brings
+              With more than eight years in beauty and aesthetics, Masoda brings
               technical expertise and an easy, personal energy to every
               appointment. Her goal is simple: help you feel confident in skin
               that still feels like yours.
@@ -317,6 +317,7 @@ export default function Home() {
           <div className="video-frame">
             <video
               controls
+              muted
               playsInline
               preload="metadata"
               poster="/mk-studio/brushes.jpeg"
@@ -403,13 +404,13 @@ export default function Home() {
             <div>
               <p className="detail-label">Location</p>
               <address>
-                35 Water St S, Suite 101
+                35 Water St S, Unit 101
                 <br />
                 Cambridge, ON N1R 8R9
               </address>
               <a
                 className="text-link"
-                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+%23101+Cambridge+ON+N1R+8R9"
+                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+8R9"
                 target="_blank"
                 rel="noreferrer"
               >
