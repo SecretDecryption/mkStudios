@@ -1,3 +1,5 @@
+import VagaroWidget from "./VagaroWidget";
+
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
 const membershipUrl =
   "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
@@ -91,6 +93,7 @@ export default function Home() {
           href={bookingUrl}
           target="_blank"
           rel="noreferrer"
+          data-vagaro-booking
         >
           Book now
         </a>
@@ -119,6 +122,7 @@ export default function Home() {
                 href={bookingUrl}
                 target="_blank"
                 rel="noreferrer"
+                data-vagaro-booking
               >
                 Book an appointment <span aria-hidden="true">↗</span>
               </a>
@@ -170,6 +174,7 @@ export default function Home() {
               rel="noreferrer"
               key={service.title}
               aria-label={`Book ${service.title}`}
+              data-vagaro-booking
             >
               <div className="service-meta">
                 <span>{service.number}</span>
@@ -438,6 +443,7 @@ export default function Home() {
             href={bookingUrl}
             target="_blank"
             rel="noreferrer"
+            data-vagaro-booking
           >
             Book your appointment <span aria-hidden="true">↗</span>
           </a>
@@ -484,6 +490,7 @@ export default function Home() {
           </a>
         </div>
       </footer>
+      <VagaroWidget />
     </>
   );
 }

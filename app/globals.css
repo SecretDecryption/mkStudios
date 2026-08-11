@@ -1180,3 +1180,17 @@ address {
     scroll-behavior: auto !important;
   }
 }
+
+.vagaro-widget-proxy {
+  display: contents;
+}
+
+.vagaro-powered-copy,
+.vagaro-widget-trigger-proxy {
+  position: fixed !important;
+  left: -10000px;
+  top: 0;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
