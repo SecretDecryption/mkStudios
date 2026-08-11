@@ -236,7 +236,7 @@ export default function Home() {
           <div className="gallery-grid">
             <figure className="gallery-item gallery-item-wide">
               <img
-                src="/mk-studio/laser-treatment.jpeg"
+                src="/mk-studio/laser-treatment-hd.png"
                 alt="Masoda performing a laser treatment at MK Studio"
                 width="320"
                 height="213"
@@ -246,7 +246,7 @@ export default function Home() {
             </figure>
             <figure className="gallery-item">
               <img
-                src="/mk-studio/facial-treatment.jpeg"
+                src="/mk-studio/facial-treatment-hd.png"
                 alt="A personalized facial treatment at MK Studio"
                 width="240"
                 height="320"
@@ -256,7 +256,7 @@ export default function Home() {
             </figure>
             <figure className="gallery-item">
               <img
-                src="/mk-studio/brushes.jpeg"
+                src="/mk-studio/brushes-hd.png"
                 alt="Masoda holding professional treatment brushes"
                 width="214"
                 height="321"
@@ -266,7 +266,7 @@ export default function Home() {
             </figure>
             <figure className="gallery-item gallery-item-portrait">
               <img
-                src="/mk-studio/masoda-portrait.jpeg"
+                src="/mk-studio/masoda-portrait-hd.png"
                 alt="Masoda seated in her Cambridge studio"
                 width="213"
                 height="320"
@@ -320,7 +320,7 @@ export default function Home() {
               muted
               playsInline
               preload="metadata"
-              poster="/mk-studio/brushes.jpeg"
+              poster="/mk-studio/brushes-hd.png"
               aria-label="MK Studio skincare tip video"
             >
               <source src="/mk-studio/tip-tuesday.mp4" type="video/mp4" />
