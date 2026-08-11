@@ -1,6 +1,7 @@
 import VagaroWidget from "./VagaroWidget";
 
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
+const servicesUrl = "https://mysite.vagaro.com/mkstudio5/services";
 const membershipUrl =
   "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
 
@@ -169,12 +170,11 @@ export default function Home() {
           {services.map((service) => (
             <a
               className="service-card"
-              href={bookingUrl}
+              href={servicesUrl}
               target="_blank"
               rel="noreferrer"
               key={service.title}
-              aria-label={`Book ${service.title}`}
-              data-vagaro-booking
+              aria-label={`View ${service.title} services on Vagaro`}
             >
               <div className="service-meta">
                 <span>{service.number}</span>
