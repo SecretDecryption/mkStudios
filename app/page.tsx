@@ -2,8 +2,7 @@ import VagaroWidget from "./VagaroWidget";
 import ServiceCards from "./ServiceCards";
 
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
-const membershipUrl =
-  "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
+const membershipUrl = "https://mysite.vagaro.com/mkstudio5/memberships";
 
 const faqs = [
   {
