@@ -1,44 +1,9 @@
 import VagaroWidget from "./VagaroWidget";
+import ServiceCards from "./ServiceCards";
 
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
-const servicesUrl = "https://mysite.vagaro.com/mkstudio5/services";
 const membershipUrl =
   "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
-
-const services = [
-  {
-    number: "01",
-    eyebrow: "Most loved",
-    title: "Laser Hair Removal",
-    vagaroSection: "Laser Hair Removal",
-    description:
-      "Personalized treatment plans designed around your skin, hair and comfort.",
-  },
-  {
-    number: "02",
-    eyebrow: "Skin rituals",
-    title: "Facials & Skin",
-    vagaroSection: "Facials",
-    description:
-      "Medical-grade care for a healthy, hydrated and visibly refreshed complexion.",
-  },
-  {
-    number: "03",
-    eyebrow: "Signature",
-    title: "Permanent Makeup",
-    vagaroSection: "Permanent Makeup",
-    description:
-      "Soft, natural-looking brows, lips and liner tailored to your features.",
-  },
-  {
-    number: "04",
-    eyebrow: "Finishing touch",
-    title: "Brows & Lashes",
-    vagaroSection: "Eyelash and Brow Extensions / Tinting",
-    description:
-      "Lifts, laminations and extensions that make everyday beauty feel effortless.",
-  },
-];
 
 const faqs = [
   {
@@ -171,28 +136,7 @@ export default function Home() {
             <h2 id="services-title">Made for you.</h2>
           </div>
 
-          {services.map((service) => (
-            <a
-              className="service-card"
-              href={`${servicesUrl}#:~:text=${encodeURIComponent(service.vagaroSection)}`}
-              target="_blank"
-              rel="noreferrer"
-              key={service.title}
-              aria-label={`View ${service.title} services on Vagaro`}
-            >
-              <div className="service-meta">
-                <span>{service.number}</span>
-                <span>{service.eyebrow}</span>
-              </div>
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-              <span className="service-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-          ))}
+          <ServiceCards />
         </section>
 
         <section className="about" id="about" aria-labelledby="about-title">
