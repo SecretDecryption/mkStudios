@@ -65,8 +65,17 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="MK Studio home">
-          <span>MK Studio</span>
-          <small>Cambridge</small>
+          <img
+            className="brand-logo"
+            src="/mk-studio/logo.png"
+            alt=""
+            width="56"
+            height="56"
+          />
+          <span className="brand-copy">
+            <span className="brand-name">MK Studio</span>
+            <small>Cambridge</small>
+          </span>
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -124,6 +133,20 @@ export default function Home() {
               <li>Cambridge, Ontario</li>
             </ul>
           </div>
+
+          <figure className="hero-portrait">
+            <img
+              src="/mk-studio/masoda-scrubs.jpeg"
+              alt="Masoda, founder and medical aesthetician at MK Studio"
+              width="213"
+              height="320"
+              loading="eager"
+            />
+            <figcaption>
+              <span>Masoda Khaliqi</span>
+              Founder · Medical aesthetician
+            </figcaption>
+          </figure>
 
           <p className="hero-word" aria-hidden="true">
             Radiant
@@ -203,6 +226,58 @@ export default function Home() {
         </section>
 
         <section
+          className="studio-gallery"
+          aria-labelledby="studio-gallery-title"
+        >
+          <div className="gallery-heading">
+            <p className="eyebrow">Inside MK Studio</p>
+            <h2 id="studio-gallery-title">Expert care, in every detail.</h2>
+          </div>
+          <div className="gallery-grid">
+            <figure className="gallery-item gallery-item-wide">
+              <img
+                src="/mk-studio/laser-treatment.jpeg"
+                alt="Masoda performing a laser treatment at MK Studio"
+                width="320"
+                height="213"
+                loading="lazy"
+              />
+              <figcaption>Advanced treatment technology</figcaption>
+            </figure>
+            <figure className="gallery-item">
+              <img
+                src="/mk-studio/facial-treatment.jpeg"
+                alt="A personalized facial treatment at MK Studio"
+                width="240"
+                height="320"
+                loading="lazy"
+              />
+              <figcaption>Comfort-first appointments</figcaption>
+            </figure>
+            <figure className="gallery-item">
+              <img
+                src="/mk-studio/brushes.jpeg"
+                alt="Masoda holding professional treatment brushes"
+                width="214"
+                height="321"
+                loading="lazy"
+              />
+              <figcaption>A detail-focused approach</figcaption>
+            </figure>
+            <figure className="gallery-item gallery-item-portrait">
+              <img
+                src="/mk-studio/masoda-portrait.jpeg"
+                alt="Masoda seated in her Cambridge studio"
+                width="213"
+                height="320"
+                loading="lazy"
+              />
+              <figcaption>The woman behind MK</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section
           className="membership"
           id="membership"
           aria-labelledby="membership-title"
@@ -227,6 +302,29 @@ export default function Home() {
             >
               Explore membership <span aria-hidden="true">↗</span>
             </a>
+          </div>
+        </section>
+
+        <section className="video-feature" aria-labelledby="video-title">
+          <div className="video-copy">
+            <p className="eyebrow">Studio tips</p>
+            <h2 id="video-title">A little expert guidance.</h2>
+            <p>
+              Watch Masoda share simple, practical advice for getting more from
+              your skincare and treatment routine.
+            </p>
+          </div>
+          <div className="video-frame">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/mk-studio/brushes.jpeg"
+              aria-label="MK Studio skincare tip video"
+            >
+              <source src="/mk-studio/tip-tuesday.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
           </div>
         </section>
 
@@ -347,8 +445,18 @@ export default function Home() {
 
       <footer className="site-footer">
         <a className="brand footer-brand" href="#top" aria-label="MK Studio home">
-          <span>MK Studio</span>
-          <small>Cambridge</small>
+          <img
+            className="brand-logo"
+            src="/mk-studio/logo.png"
+            alt=""
+            width="56"
+            height="56"
+            loading="lazy"
+          />
+          <span className="brand-copy">
+            <span className="brand-name">MK Studio</span>
+            <small>Cambridge</small>
+          </span>
         </a>
         <p>Certified medical aesthetics, made personal.</p>
         <div className="social-links" aria-label="Social links">
