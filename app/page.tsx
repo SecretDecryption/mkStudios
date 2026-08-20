@@ -2,7 +2,8 @@ import VagaroWidget from "./VagaroWidget";
 import ServiceCards from "./ServiceCards";
 
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
-const membershipUrl = "https://mysite.vagaro.com/mkstudio5/memberships";
+const membershipUrl =
+  "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
 
 const faqs = [
   {
@@ -358,11 +359,11 @@ export default function Home() {
               <address>
                 35 Water St S, Unit 101
                 <br />
-                Cambridge, ON N1R 3C7
+                Cambridge, ON N1R 8R9
               </address>
               <a
                 className="text-link"
-                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+3C7"
+                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+8R9"
                 target="_blank"
                 rel="noreferrer"
               >

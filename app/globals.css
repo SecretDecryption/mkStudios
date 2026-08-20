@@ -421,6 +421,32 @@ summary:focus-visible {
   transition: background 190ms ease, color 190ms ease;
 }
 
+@media (min-width: 1181px) {
+  .service-card {
+    grid-row: 1;
+  }
+
+  .service-card-slot-1 {
+    grid-column: 2;
+  }
+
+  .service-card-slot-2 {
+    grid-column: 3;
+  }
+
+  .service-card-slot-3 {
+    grid-column: 4;
+  }
+
+  .service-card-slot-4 {
+    grid-column: 5;
+  }
+
+  .service-details-panel {
+    grid-row: 2;
+  }
+}
+
 .service-card:hover,
 .service-card.is-open,
 .service-card:focus-within {

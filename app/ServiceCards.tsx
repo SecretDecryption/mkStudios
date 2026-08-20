@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const servicesUrl = "https://mysite.vagaro.com/mkstudio5/services";
 
@@ -72,71 +72,64 @@ export default function ServiceCards() {
 
   return (
     <>
-      {services.map((service) => {
+      {services.map((service, index) => {
         const isOpen = openService === service.slug;
         const panelId = `service-panel-${service.slug}`;
 
         return (
-          <article
-            className={`service-card${isOpen ? " is-open" : ""}`}
-            key={service.slug}
-          >
-            <button
-              className="service-card-toggle"
-              type="button"
-              aria-expanded={isOpen}
-              aria-controls={panelId}
-              onClick={() => setOpenService(isOpen ? null : service.slug)}
+          <Fragment key={service.slug}>
+            <article
+              className={`service-card service-card-slot-${index + 1}${isOpen ? " is-open" : ""}`}
             >
-              <span className="service-meta">
-                <span>{service.number}</span>
-                <span>{service.eyebrow}</span>
-              </span>
-              <span className="service-card-copy">
-                <span className="service-card-title">{service.title}</span>
-                <span className="service-card-description">
-                  {service.description}
+              <button
+                className="service-card-toggle"
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                onClick={() => setOpenService(isOpen ? null : service.slug)}
+              >
+                <span className="service-meta">
+                  <span>{service.number}</span>
+                  <span>{service.eyebrow}</span>
                 </span>
-              </span>
-              <span className="service-arrow" aria-hidden="true">
-                {isOpen ? "−" : "+"}
-              </span>
-            </button>
-          </article>
-        );
-      })}
+                <span className="service-card-copy">
+                  <span className="service-card-title">{service.title}</span>
+                  <span className="service-card-description">
+                    {service.description}
+                  </span>
+                </span>
+                <span className="service-arrow" aria-hidden="true">
+                  {isOpen ? "−" : "+"}
+                </span>
+              </button>
+            </article>
 
-      {services.map((service) => {
-        const isOpen = openService === service.slug;
-        const panelId = `service-panel-${service.slug}`;
-
-        return (
-          <section
-            className="service-details-panel"
-            id={panelId}
-            key={panelId}
-            hidden={!isOpen}
-            aria-label={`${service.title} service details`}
-          >
-            <div className="service-details-copy">
-              <p className="eyebrow">Explore the menu</p>
-              <h3>{service.title}</h3>
-              <p>{service.panelCopy}</p>
-            </div>
-            <ul>
-              {service.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-            <a
-              className="service-vagaro-link"
-              href={servicesUrl}
-              target="_blank"
-              rel="noreferrer"
+            <section
+              className="service-details-panel"
+              id={panelId}
+              hidden={!isOpen}
+              aria-label={`${service.title} service details`}
             >
-              View all services on Vagaro <span aria-hidden="true">↗</span>
-            </a>
-          </section>
+              <div className="service-details-copy">
+                <p className="eyebrow">Explore the menu</p>
+                <h3>{service.title}</h3>
+                <p>{service.panelCopy}</p>
+              </div>
+              <ul>
+                {service.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+              <a
+                className="service-vagaro-link"
+                href={servicesUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View all services on Vagaro <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </Fragment>
         );
       })}
     </>
