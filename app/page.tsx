@@ -2,7 +2,8 @@ import VagaroWidget from "./VagaroWidget";
 import ServiceCards from "./ServiceCards";
 
 const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
-const membershipUrl =
+const membershipDetailsUrl = "https://mysite.vagaro.com/mkstudio5/memberships";
+const membershipCheckoutUrl =
   "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
 
 const faqs = [
@@ -245,16 +246,27 @@ export default function Home() {
           <div className="membership-copy">
             <p>
               Turn skincare into a ritual with preferred pricing and regular
-              time reserved for your glow goals.
+              time reserved for your glow goals. Review the membership details
+              first—no account is needed until you decide to join.
             </p>
-            <a
-              className="button button-light"
-              href={membershipUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Explore membership <span aria-hidden="true">↗</span>
-            </a>
+            <div className="membership-actions">
+              <a
+                className="button button-light"
+                href={membershipDetailsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View membership details <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="membership-join-link"
+                href={membershipCheckoutUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ready to join? Continue to Vagaro <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
