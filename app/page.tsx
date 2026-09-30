@@ -324,14 +324,26 @@ export default function Home() {
                       )}
                     </div>
 
-                    <div className="ipl-launch-offer">
-                      <div>
-                        <strong>{treatment.launch}</strong>
-                        <span>{treatment.launchLabel}</span>
-                        {treatment.regularPackage && <small>Launch special</small>}
+                    <a
+                      className="ipl-launch-offer"
+                      href={bookingUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-vagaro-booking
+                      aria-label={`Book ${treatment.name} IPL treatment`}
+                    >
+                      <div className="ipl-launch-main">
+                        <div className="ipl-launch-price">
+                          <strong>{treatment.launch}</strong>
+                          <span>{treatment.launchLabel}</span>
+                          {treatment.regularPackage && <small>Launch special</small>}
+                        </div>
+                        {treatment.savings && <b>{treatment.savings}</b>}
                       </div>
-                      {treatment.savings && <b>{treatment.savings}</b>}
-                    </div>
+                      <span className="ipl-launch-cta">
+                        Book this treatment <span aria-hidden="true">↗</span>
+                      </span>
+                    </a>
                   </div>
                 </article>
               ))}
