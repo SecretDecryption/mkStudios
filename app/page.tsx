@@ -29,6 +29,51 @@ const faqs = [
   },
 ];
 
+const iplPricing = [
+  {
+    area: "Full Face",
+    single: "$249",
+    regularPackage: "$675",
+    launch: "$499",
+    launchLabel: "Launch package of 3",
+  },
+  {
+    area: "Face + Neck",
+    single: "$349",
+    regularPackage: "$899",
+    launch: "$699",
+    launchLabel: "Launch package of 3",
+  },
+  {
+    area: "Face + Neck + Chest",
+    single: "$449",
+    regularPackage: "$1,149",
+    launch: "$899",
+    launchLabel: "Launch package of 3",
+  },
+  {
+    area: "Chest",
+    single: "$225",
+    regularPackage: "$575",
+    launch: "$449",
+    launchLabel: "Launch package of 3",
+  },
+  {
+    area: "Hands",
+    single: "$150",
+    regularPackage: "$399",
+    launch: "$299",
+    launchLabel: "Launch package of 3",
+  },
+  {
+    area: "Spot Treatment",
+    single: "$75",
+    regularPackage: null,
+    launch: "$60",
+    launchLabel: "Launch single session",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -138,6 +183,85 @@ export default function Home() {
           </div>
 
           <ServiceCards />
+        </section>
+
+        <section className="ipl-feature" id="ipl" aria-labelledby="ipl-title">
+          <figure className="ipl-visual">
+            <img
+              src="/mk-studio/ipl-lumecca-enhanced.png"
+              alt="Introducing Lumecca IPL treatments at MK Studio"
+              width="840"
+              height="1871"
+              loading="lazy"
+            />
+          </figure>
+
+          <div className="ipl-copy">
+            <p className="eyebrow">Now at MK Studio · InMode Lumecca</p>
+            <h2 id="ipl-title">
+              Lumecca IPL.
+              <em> Brighter, clearer, more even-looking skin.</em>
+            </h2>
+            <p>
+              Our IPL treatment uses InMode Lumecca technology to target
+              pigmentation, sun damage, age spots, redness, visible vessels and
+              uneven skin tone. It helps improve overall skin clarity and
+              complexion, leaving the skin looking brighter, clearer and more
+              even.
+            </p>
+            <ul className="ipl-benefits">
+              <li>Targets sun damage, brown spots and pigmentation</li>
+              <li>Helps reduce redness and visible vessels</li>
+              <li>Minimal downtime with a personalized treatment plan</li>
+            </ul>
+            <a
+              className="button button-dark"
+              href={bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-vagaro-booking
+            >
+              View IPL options and book <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div className="ipl-pricing" aria-labelledby="ipl-pricing-title">
+            <div className="ipl-pricing-heading">
+              <div>
+                <p className="eyebrow">Introductory offer</p>
+                <h3 id="ipl-pricing-title">IPL launch pricing.</h3>
+              </div>
+              <p>
+                Regular single-session and package pricing is shown alongside
+                the limited launch offer. For best results, a series of three
+                treatments spaced four to six weeks apart is recommended.
+              </p>
+            </div>
+
+            <div className="ipl-price-grid">
+              {iplPricing.map((option) => (
+                <article className="ipl-price-card" key={option.area}>
+                  <h4>{option.area}</h4>
+                  <dl>
+                    <div>
+                      <dt>Single session</dt>
+                      <dd>{option.single}</dd>
+                    </div>
+                    {option.regularPackage ? (
+                      <div>
+                        <dt>Regular package of 3</dt>
+                        <dd>{option.regularPackage}</dd>
+                      </div>
+                    ) : null}
+                    <div className="ipl-launch-price">
+                      <dt>{option.launchLabel}</dt>
+                      <dd>{option.launch}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="about" id="about" aria-labelledby="about-title">
@@ -371,11 +495,11 @@ export default function Home() {
               <address>
                 35 Water St S, Unit 101
                 <br />
-                Cambridge, ON N1R 8R9
+                Cambridge, ON N1R 3C7
               </address>
               <a
                 className="text-link"
-                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+8R9"
+                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+3C7"
                 target="_blank"
                 rel="noreferrer"
               >

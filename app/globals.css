@@ -635,6 +635,194 @@ summary:focus-visible {
   }
 }
 
+.ipl-feature {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.ipl-visual {
+  min-height: 760px;
+  margin: 0;
+  padding: clamp(42px, 6vw, 88px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--blush);
+  border-right: 1px solid var(--line);
+}
+
+.ipl-visual img {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  box-shadow: 0 28px 70px rgba(27, 15, 6, 0.16);
+}
+
+.ipl-copy {
+  align-self: center;
+  padding: clamp(64px, 8vw, 124px) clamp(34px, 7vw, 110px);
+}
+
+.ipl-copy .eyebrow,
+.ipl-pricing .eyebrow {
+  color: var(--rose-deep);
+}
+
+.ipl-copy h2 {
+  max-width: 780px;
+  margin: 16px 0 28px;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5.8vw, 6.6rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.ipl-copy h2 em {
+  display: block;
+  margin-top: 10px;
+  color: var(--rose-deep);
+  font-size: 0.54em;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.ipl-copy > p:not(.eyebrow) {
+  max-width: 690px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.ipl-benefits {
+  max-width: 690px;
+  margin: 28px 0 34px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.ipl-benefits li {
+  position: relative;
+  padding: 13px 0 13px 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.ipl-benefits li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose-deep);
+  transform: translateY(-50%);
+}
+
+.ipl-pricing {
+  grid-column: 1 / -1;
+  padding: clamp(64px, 7vw, 110px) clamp(28px, 7vw, 110px);
+  background: var(--blush-light);
+  border-top: 1px solid var(--line);
+}
+
+.ipl-pricing-heading {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1.2fr);
+  align-items: end;
+  gap: clamp(34px, 7vw, 110px);
+  margin-bottom: 42px;
+}
+
+.ipl-pricing-heading h3 {
+  margin: 12px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.8vw, 5.1rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+}
+
+.ipl-pricing-heading > p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ipl-price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ipl-price-card {
+  padding: clamp(24px, 2.6vw, 38px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.ipl-price-card h4 {
+  min-height: 2.25em;
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.ipl-price-card dl {
+  margin: 0;
+}
+
+.ipl-price-card dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.ipl-price-card dt {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.ipl-price-card dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ipl-price-card .ipl-launch-price {
+  margin: 10px -14px -14px;
+  padding: 15px 14px;
+  background: var(--espresso);
+  border-top: 0;
+  color: var(--pearl);
+}
+
+.ipl-price-card .ipl-launch-price dt {
+  color: var(--rose);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ipl-price-card .ipl-launch-price dd {
+  color: var(--pearl);
+  font-size: 1.6rem;
+}
+
 .about {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -1161,6 +1349,19 @@ address {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .ipl-feature {
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  }
+
+  .ipl-visual {
+    min-height: 640px;
+    padding: 42px;
+  }
+
+  .ipl-price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .gallery-item-wide {
     grid-column: 1 / -1;
     min-height: 390px;
@@ -1228,6 +1429,7 @@ address {
   }
 
   .about,
+  .ipl-feature,
   .membership,
   .video-feature,
   .process,
@@ -1239,6 +1441,26 @@ address {
   .about-main {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .ipl-visual {
+    min-height: auto;
+    padding: 54px 28px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ipl-visual img {
+    width: min(82vw, 390px);
+  }
+
+  .ipl-copy {
+    padding: 68px 28px;
+  }
+
+  .ipl-pricing-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .membership,
@@ -1370,6 +1592,18 @@ address {
   .service-intro {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .ipl-copy h2 {
+    font-size: clamp(3rem, 15vw, 4.7rem);
+  }
+
+  .ipl-price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ipl-price-card h4 {
+    min-height: 0;
   }
 
   .process-list li {
