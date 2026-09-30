@@ -29,48 +29,90 @@ const faqs = [
   },
 ];
 
-const iplGallery = [
+const iplPricing = [
   {
-    src: "/mk-studio/ipl-lumecca-enhanced.png",
-    label: "Introducing Lumecca IPL",
-    alt: "Introducing Lumecca IPL at MK Studio with treatment benefits and minimal downtime",
-    width: 840,
-    height: 1871,
+    name: "Full Face",
+    tagline: "Brighten · even tone · reduce redness",
+    image: "/mk-studio/ipl-treatment-full-face.png",
+    imageAlt: "Close-up portrait showing clear, luminous facial skin",
+    imageWidth: 744,
+    imageHeight: 868,
+    single: "$249",
+    singleLabel: "Single session",
+    regularPackage: "$675",
+    launch: "$499",
+    launchLabel: "Package of 3",
+    savings: "Save $176",
   },
   {
-    src: "/mk-studio/ipl-lumecca-full-face-enhanced.png",
-    label: "Full Face",
-    alt: "Full Face IPL pricing: $249 single, $675 regular package of 3 and $499 launch package",
-    width: 842,
-    height: 1869,
+    name: "Face + Neck",
+    tagline: "Brighter skin · reduce age spots · improve redness",
+    image: "/mk-studio/ipl-treatment-face-neck.png",
+    imageAlt: "Close-up portrait highlighting the face and neck treatment area",
+    imageWidth: 765,
+    imageHeight: 899,
+    single: "$349",
+    singleLabel: "Single session",
+    regularPackage: "$899",
+    launch: "$699",
+    launchLabel: "Package of 3",
+    savings: "Save $200",
   },
   {
-    src: "/mk-studio/ipl-lumecca-face-neck-enhanced.png",
-    label: "Face + Neck",
-    alt: "Face and Neck IPL pricing: $349 single, $899 regular package of 3 and $699 launch package",
-    width: 806,
-    height: 1951,
+    name: "Face + Neck + Chest",
+    tagline: "Complete rejuvenation for a youthful, even complexion",
+    image: "/mk-studio/ipl-treatment-face-neck-chest.png",
+    imageAlt: "Portrait highlighting the neck and chest treatment area",
+    imageWidth: 838,
+    imageHeight: 762,
+    single: "$449",
+    singleLabel: "Single session",
+    regularPackage: "$1,149",
+    launch: "$899",
+    launchLabel: "Package of 3",
+    savings: "Save $250",
   },
   {
-    src: "/mk-studio/ipl-lumecca-face-neck-chest-enhanced.png",
-    label: "Face + Neck + Chest",
-    alt: "Face, Neck and Chest IPL pricing: $449 single, $1,149 regular package of 3 and $899 launch package",
-    width: 851,
-    height: 1847,
+    name: "Chest",
+    tagline: "Reduce sun damage and pigmentation",
+    image: "/mk-studio/ipl-treatment-chest.jpeg",
+    imageAlt: "Chest treatment area with clear, even-looking skin",
+    imageWidth: 304,
+    imageHeight: 114,
+    single: "$225",
+    singleLabel: "Single session",
+    regularPackage: "$575",
+    launch: "$449",
+    launchLabel: "Package of 3",
+    savings: null,
   },
   {
-    src: "/mk-studio/ipl-lumecca-chest-hands-spot.jpeg",
-    label: "Chest · Hands · Spot Treatment",
-    alt: "IPL pricing for Chest, Hands and Spot Treatments, including regular and launch pricing",
-    width: 339,
-    height: 762,
+    name: "Hands",
+    tagline: "Improve sun spots and even skin tone",
+    image: "/mk-studio/ipl-treatment-hands.jpeg",
+    imageAlt: "Hands with smooth, even-looking skin",
+    imageWidth: 304,
+    imageHeight: 104,
+    single: "$150",
+    singleLabel: "Single session",
+    regularPackage: "$399",
+    launch: "$299",
+    launchLabel: "Package of 3",
+    savings: null,
   },
   {
-    src: "/mk-studio/ipl-lumecca-benefits-enhanced.png",
-    label: "Why Lumecca?",
-    alt: "Lumecca IPL benefits and recommended plan of three treatments spaced four to six weeks apart",
-    width: 821,
-    height: 1915,
+    name: "Spot Treatment",
+    tagline: "Target small areas: sun spots, vessels and pigmentation",
+    image: "/mk-studio/ipl-treatment-spot.jpeg",
+    imageAlt: "Close-up example of a small pigmentation spot treatment area",
+    imageWidth: 80,
+    imageHeight: 80,
+    single: "$75",
+    singleLabel: "Regular price",
+    regularPackage: null,
+    launch: "$60",
+    launchLabel: "Launch special",
+    savings: null,
   },
 ];
 
@@ -187,14 +229,12 @@ export default function Home() {
 
         <section className="ipl-feature" id="ipl" aria-labelledby="ipl-title">
           <div className="ipl-copy">
-            <div className="ipl-heading">
+            <div className="ipl-copy-content">
               <p className="eyebrow">Now at MK Studio · InMode Lumecca</p>
               <h2 id="ipl-title">
                 Lumecca IPL.
                 <em> Brighter, clearer, more even-looking skin.</em>
               </h2>
-            </div>
-            <div className="ipl-body">
               <p>
                 Our IPL treatment uses InMode Lumecca technology to target
                 pigmentation, sun damage, age spots, redness, visible vessels and
@@ -217,6 +257,16 @@ export default function Home() {
                 View IPL options and book <span aria-hidden="true">↗</span>
               </a>
             </div>
+
+            <figure className="ipl-visual">
+              <img
+                src="/mk-studio/ipl-lumecca-clean.png"
+                alt="Introducing Lumecca IPL at MK Studio with treatment benefits and minimal downtime"
+                width="840"
+                height="1871"
+                loading="lazy"
+              />
+            </figure>
           </div>
 
           <div className="ipl-pricing" aria-labelledby="ipl-pricing-title">
@@ -232,24 +282,60 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ipl-image-gallery" aria-label="IPL treatment and pricing gallery">
-              {iplGallery.map((slide, index) => (
-                <figure className="ipl-gallery-card" key={slide.src}>
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    width={slide.width}
-                    height={slide.height}
-                    loading="lazy"
-                  />
-                  <figcaption>
-                    <span>{slide.label}</span>
-                    <span>{String(index + 1).padStart(2, "0")} / 06</span>
-                  </figcaption>
-                </figure>
+            <div className="ipl-price-grid" aria-label="IPL treatment and launch pricing">
+              {iplPricing.map((treatment) => (
+                <article className="ipl-price-card" key={treatment.name}>
+                  <div
+                    className={`ipl-treatment-image${
+                      treatment.name === "Spot Treatment"
+                        ? " ipl-treatment-image-detail"
+                        : ""
+                    }`}
+                  >
+                    <img
+                      src={treatment.image}
+                      alt={treatment.imageAlt}
+                      width={treatment.imageWidth}
+                      height={treatment.imageHeight}
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="ipl-treatment-copy">
+                    <h4>{treatment.name}</h4>
+                    <p>{treatment.tagline}</p>
+
+                    <div
+                      className={`ipl-rate-grid${
+                        treatment.regularPackage ? "" : " ipl-rate-grid-single"
+                      }`}
+                    >
+                      <div className="ipl-rate">
+                        <strong>{treatment.single}</strong>
+                        <span>{treatment.singleLabel}</span>
+                        {treatment.regularPackage && <small>Regular price</small>}
+                      </div>
+                      {treatment.regularPackage && (
+                        <div className="ipl-rate">
+                          <strong>{treatment.regularPackage}</strong>
+                          <span>Package of 3</span>
+                          <small>Regular price</small>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="ipl-launch-offer">
+                      <div>
+                        <strong>{treatment.launch}</strong>
+                        <span>{treatment.launchLabel}</span>
+                        {treatment.regularPackage && <small>Launch special</small>}
+                      </div>
+                      {treatment.savings && <b>{treatment.savings}</b>}
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
-            <p className="ipl-gallery-hint">Scroll to view every treatment and launch offer.</p>
           </div>
         </section>
 
