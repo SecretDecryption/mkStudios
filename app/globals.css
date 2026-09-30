@@ -636,32 +636,15 @@ summary:focus-visible {
 }
 
 .ipl-feature {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
   background: var(--paper);
   color: var(--ink);
 }
 
-.ipl-visual {
-  min-height: 760px;
-  margin: 0;
-  padding: clamp(42px, 6vw, 88px);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: var(--blush);
-  border-right: 1px solid var(--line);
-}
-
-.ipl-visual img {
-  display: block;
-  width: min(100%, 420px);
-  height: auto;
-  box-shadow: 0 28px 70px rgba(27, 15, 6, 0.16);
-}
-
 .ipl-copy {
-  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  align-items: center;
+  gap: clamp(46px, 8vw, 130px);
   padding: clamp(64px, 8vw, 124px) clamp(34px, 7vw, 110px);
 }
 
@@ -671,7 +654,6 @@ summary:focus-visible {
 }
 
 .ipl-copy h2 {
-  max-width: 780px;
   margin: 16px 0 28px;
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 5.8vw, 6.6rem);
@@ -689,8 +671,9 @@ summary:focus-visible {
   line-height: 1.08;
 }
 
-.ipl-copy > p:not(.eyebrow) {
+.ipl-body > p {
   max-width: 690px;
+  margin-top: 0;
   color: var(--muted);
   line-height: 1.75;
 }
@@ -725,7 +708,6 @@ summary:focus-visible {
 }
 
 .ipl-pricing {
-  grid-column: 1 / -1;
   padding: clamp(64px, 7vw, 110px) clamp(28px, 7vw, 110px);
   background: var(--blush-light);
   border-top: 1px solid var(--line);
@@ -755,72 +737,73 @@ summary:focus-visible {
   line-height: 1.7;
 }
 
-.ipl-price-grid {
+.ipl-image-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 320px);
+  gap: 18px;
+  margin-right: calc(clamp(28px, 7vw, 110px) * -1);
+  padding: 10px clamp(28px, 7vw, 110px) 28px 2px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: var(--rose-deep) rgba(27, 15, 6, 0.08);
+  scrollbar-width: thin;
 }
 
-.ipl-price-card {
-  padding: clamp(24px, 2.6vw, 38px);
+.ipl-image-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ipl-image-gallery::-webkit-scrollbar-track {
+  background: rgba(27, 15, 6, 0.08);
+}
+
+.ipl-image-gallery::-webkit-scrollbar-thumb {
+  background: var(--rose-deep);
+  border-radius: 999px;
+}
+
+.ipl-gallery-card {
+  margin: 0;
+  padding: 10px;
   background: var(--paper);
   border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(27, 15, 6, 0.09);
+  scroll-snap-align: start;
 }
 
-.ipl-price-card h4 {
-  min-height: 2.25em;
-  margin: 0 0 24px;
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
-  font-weight: 500;
-  line-height: 1.08;
+.ipl-gallery-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 348 / 773;
+  object-fit: cover;
+  background: #f7f1e8;
 }
 
-.ipl-price-card dl {
-  margin: 0;
-}
-
-.ipl-price-card dl > div {
+.ipl-gallery-card figcaption {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
-}
-
-.ipl-price-card dt {
+  gap: 14px;
+  padding: 14px 4px 4px;
   color: var(--muted);
-  font-size: 0.7rem;
-  line-height: 1.4;
-}
-
-.ipl-price-card dd {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.ipl-price-card .ipl-launch-price {
-  margin: 10px -14px -14px;
-  padding: 15px 14px;
-  background: var(--espresso);
-  border-top: 0;
-  color: var(--pearl);
-}
-
-.ipl-price-card .ipl-launch-price dt {
-  color: var(--rose);
+  font-size: 0.57rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-.ipl-price-card .ipl-launch-price dd {
-  color: var(--pearl);
-  font-size: 1.6rem;
+.ipl-gallery-card figcaption span:first-child {
+  color: var(--ink);
+}
+
+.ipl-gallery-hint {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-style: italic;
 }
 
 .about {
@@ -1349,17 +1332,8 @@ address {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ipl-feature {
-    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
-  }
-
-  .ipl-visual {
-    min-height: 640px;
-    padding: 42px;
-  }
-
-  .ipl-price-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .ipl-image-gallery {
+    grid-auto-columns: minmax(250px, 300px);
   }
 
   .gallery-item-wide {
@@ -1429,7 +1403,6 @@ address {
   }
 
   .about,
-  .ipl-feature,
   .membership,
   .video-feature,
   .process,
@@ -1443,18 +1416,9 @@ address {
     border-bottom: 1px solid var(--line);
   }
 
-  .ipl-visual {
-    min-height: auto;
-    padding: 54px 28px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .ipl-visual img {
-    width: min(82vw, 390px);
-  }
-
   .ipl-copy {
+    grid-template-columns: 1fr;
+    gap: 30px;
     padding: 68px 28px;
   }
 
@@ -1598,12 +1562,10 @@ address {
     font-size: clamp(3rem, 15vw, 4.7rem);
   }
 
-  .ipl-price-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ipl-price-card h4 {
-    min-height: 0;
+  .ipl-image-gallery {
+    grid-auto-columns: minmax(78vw, 300px);
+    margin-right: -28px;
+    padding-right: 28px;
   }
 
   .process-list li {

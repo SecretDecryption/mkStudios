@@ -29,48 +29,48 @@ const faqs = [
   },
 ];
 
-const iplPricing = [
+const iplGallery = [
   {
-    area: "Full Face",
-    single: "$249",
-    regularPackage: "$675",
-    launch: "$499",
-    launchLabel: "Launch package of 3",
+    src: "/mk-studio/ipl-lumecca-enhanced.png",
+    label: "Introducing Lumecca IPL",
+    alt: "Introducing Lumecca IPL at MK Studio with treatment benefits and minimal downtime",
+    width: 840,
+    height: 1871,
   },
   {
-    area: "Face + Neck",
-    single: "$349",
-    regularPackage: "$899",
-    launch: "$699",
-    launchLabel: "Launch package of 3",
+    src: "/mk-studio/ipl-lumecca-full-face-enhanced.png",
+    label: "Full Face",
+    alt: "Full Face IPL pricing: $249 single, $675 regular package of 3 and $499 launch package",
+    width: 842,
+    height: 1869,
   },
   {
-    area: "Face + Neck + Chest",
-    single: "$449",
-    regularPackage: "$1,149",
-    launch: "$899",
-    launchLabel: "Launch package of 3",
+    src: "/mk-studio/ipl-lumecca-face-neck-enhanced.png",
+    label: "Face + Neck",
+    alt: "Face and Neck IPL pricing: $349 single, $899 regular package of 3 and $699 launch package",
+    width: 806,
+    height: 1951,
   },
   {
-    area: "Chest",
-    single: "$225",
-    regularPackage: "$575",
-    launch: "$449",
-    launchLabel: "Launch package of 3",
+    src: "/mk-studio/ipl-lumecca-face-neck-chest-enhanced.png",
+    label: "Face + Neck + Chest",
+    alt: "Face, Neck and Chest IPL pricing: $449 single, $1,149 regular package of 3 and $899 launch package",
+    width: 851,
+    height: 1847,
   },
   {
-    area: "Hands",
-    single: "$150",
-    regularPackage: "$399",
-    launch: "$299",
-    launchLabel: "Launch package of 3",
+    src: "/mk-studio/ipl-lumecca-chest-hands-spot.jpeg",
+    label: "Chest · Hands · Spot Treatment",
+    alt: "IPL pricing for Chest, Hands and Spot Treatments, including regular and launch pricing",
+    width: 339,
+    height: 762,
   },
   {
-    area: "Spot Treatment",
-    single: "$75",
-    regularPackage: null,
-    launch: "$60",
-    launchLabel: "Launch single session",
+    src: "/mk-studio/ipl-lumecca-benefits-enhanced.png",
+    label: "Why Lumecca?",
+    alt: "Lumecca IPL benefits and recommended plan of three treatments spaced four to six weeks apart",
+    width: 821,
+    height: 1915,
   },
 ];
 
@@ -186,43 +186,37 @@ export default function Home() {
         </section>
 
         <section className="ipl-feature" id="ipl" aria-labelledby="ipl-title">
-          <figure className="ipl-visual">
-            <img
-              src="/mk-studio/ipl-lumecca-enhanced.png"
-              alt="Introducing Lumecca IPL treatments at MK Studio"
-              width="840"
-              height="1871"
-              loading="lazy"
-            />
-          </figure>
-
           <div className="ipl-copy">
-            <p className="eyebrow">Now at MK Studio · InMode Lumecca</p>
-            <h2 id="ipl-title">
-              Lumecca IPL.
-              <em> Brighter, clearer, more even-looking skin.</em>
-            </h2>
-            <p>
-              Our IPL treatment uses InMode Lumecca technology to target
-              pigmentation, sun damage, age spots, redness, visible vessels and
-              uneven skin tone. It helps improve overall skin clarity and
-              complexion, leaving the skin looking brighter, clearer and more
-              even.
-            </p>
-            <ul className="ipl-benefits">
-              <li>Targets sun damage, brown spots and pigmentation</li>
-              <li>Helps reduce redness and visible vessels</li>
-              <li>Minimal downtime with a personalized treatment plan</li>
-            </ul>
-            <a
-              className="button button-dark"
-              href={bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-vagaro-booking
-            >
-              View IPL options and book <span aria-hidden="true">↗</span>
-            </a>
+            <div className="ipl-heading">
+              <p className="eyebrow">Now at MK Studio · InMode Lumecca</p>
+              <h2 id="ipl-title">
+                Lumecca IPL.
+                <em> Brighter, clearer, more even-looking skin.</em>
+              </h2>
+            </div>
+            <div className="ipl-body">
+              <p>
+                Our IPL treatment uses InMode Lumecca technology to target
+                pigmentation, sun damage, age spots, redness, visible vessels and
+                uneven skin tone. It helps improve overall skin clarity and
+                complexion, leaving the skin looking brighter, clearer and more
+                even.
+              </p>
+              <ul className="ipl-benefits">
+                <li>Targets sun damage, brown spots and pigmentation</li>
+                <li>Helps reduce redness and visible vessels</li>
+                <li>Minimal downtime with a personalized treatment plan</li>
+              </ul>
+              <a
+                className="button button-dark"
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                data-vagaro-booking
+              >
+                View IPL options and book <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
 
           <div className="ipl-pricing" aria-labelledby="ipl-pricing-title">
@@ -238,29 +232,24 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ipl-price-grid">
-              {iplPricing.map((option) => (
-                <article className="ipl-price-card" key={option.area}>
-                  <h4>{option.area}</h4>
-                  <dl>
-                    <div>
-                      <dt>Single session</dt>
-                      <dd>{option.single}</dd>
-                    </div>
-                    {option.regularPackage ? (
-                      <div>
-                        <dt>Regular package of 3</dt>
-                        <dd>{option.regularPackage}</dd>
-                      </div>
-                    ) : null}
-                    <div className="ipl-launch-price">
-                      <dt>{option.launchLabel}</dt>
-                      <dd>{option.launch}</dd>
-                    </div>
-                  </dl>
-                </article>
+            <div className="ipl-image-gallery" aria-label="IPL treatment and pricing gallery">
+              {iplGallery.map((slide, index) => (
+                <figure className="ipl-gallery-card" key={slide.src}>
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={slide.width}
+                    height={slide.height}
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>{slide.label}</span>
+                    <span>{String(index + 1).padStart(2, "0")} / 06</span>
+                  </figcaption>
+                </figure>
               ))}
             </div>
+            <p className="ipl-gallery-hint">Scroll to view every treatment and launch offer.</p>
           </div>
         </section>
 
