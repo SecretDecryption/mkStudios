@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Where is MK Studio located?",
     answer:
-      "MK Studio is inside TBS at 35 Water Street South, Unit 101, in downtown Cambridge, Ontario.",
+      "MK Studio is located at 18 Ainslie Street South in downtown Cambridge, Ontario.",
   },
   {
     question: "Is financing available?",
@@ -580,13 +580,13 @@ export default function Home() {
             <div>
               <p className="detail-label">Location</p>
               <address>
-                35 Water St S, Unit 101
+                18 Ainslie Street South
                 <br />
-                Cambridge, ON N1R 3C7
+                Cambridge, Ontario
               </address>
               <a
                 className="text-link"
-                href="https://www.google.com/maps/search/?api=1&query=35+Water+St+S+Unit+101+Cambridge+ON+N1R+3C7"
+                href="https://www.google.com/maps/search/?api=1&query=18+Ainslie+Street+South+Cambridge+Ontario"
                 target="_blank"
                 rel="noreferrer"
               >
