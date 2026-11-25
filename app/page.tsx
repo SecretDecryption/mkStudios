@@ -5,6 +5,20 @@ const bookingUrl = "https://mysite.vagaro.com/mkstudio5/book-now";
 const membershipDetailsUrl = "https://mysite.vagaro.com/mkstudio5/memberships";
 const membershipCheckoutUrl =
   "https://www.vagaro.com/cl/FXOWv4OWI4u6akim~~pzsBeI2z~esSGAUy2VtYjDla4=";
+const grandOpeningRsvpUrl =
+  process.env.NODE_ENV === "development"
+    ? "/rsvp-preview"
+    : process.env.MK_STUDIO_RSVP_URL?.trim() || null;
+
+const grandOpeningFlyer = (
+  <img
+    src="/mk-studio/grand-opening.png"
+    alt="MK Studio grand opening invitation for Sunday, November 29, 2026 from 1:00 PM to 4:00 PM at 18 Ainslie Street South, Cambridge, Ontario"
+    width="1774"
+    height="887"
+    loading="lazy"
+  />
+);
 
 const faqs = [
   {
@@ -40,9 +54,6 @@ const iplPricing = [
     single: "$249",
     singleLabel: "Single session",
     regularPackage: "$675",
-    launch: "$499",
-    launchLabel: "Package of 3",
-    savings: "Save $176",
   },
   {
     name: "Face + Neck",
@@ -54,9 +65,6 @@ const iplPricing = [
     single: "$349",
     singleLabel: "Single session",
     regularPackage: "$899",
-    launch: "$699",
-    launchLabel: "Package of 3",
-    savings: "Save $200",
   },
   {
     name: "Face + Neck + Chest",
@@ -68,9 +76,6 @@ const iplPricing = [
     single: "$449",
     singleLabel: "Single session",
     regularPackage: "$1,149",
-    launch: "$899",
-    launchLabel: "Package of 3",
-    savings: "Save $250",
   },
   {
     name: "Chest",
@@ -82,9 +87,6 @@ const iplPricing = [
     single: "$225",
     singleLabel: "Single session",
     regularPackage: "$575",
-    launch: "$449",
-    launchLabel: "Package of 3",
-    savings: null,
   },
   {
     name: "Hands",
@@ -96,9 +98,6 @@ const iplPricing = [
     single: "$150",
     singleLabel: "Single session",
     regularPackage: "$399",
-    launch: "$299",
-    launchLabel: "Package of 3",
-    savings: null,
   },
   {
     name: "Spot Treatment",
@@ -110,9 +109,6 @@ const iplPricing = [
     single: "$75",
     singleLabel: "Regular price",
     regularPackage: null,
-    launch: "$60",
-    launchLabel: "Launch special",
-    savings: null,
   },
 ];
 
@@ -218,6 +214,60 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          className="grand-opening"
+          id="grand-opening"
+          aria-labelledby="grand-opening-title"
+        >
+          <div className="grand-opening-heading">
+            <div>
+              <p className="eyebrow">You&apos;re invited</p>
+              <h2 id="grand-opening-title">Celebrate our grand opening.</h2>
+            </div>
+            <p>
+              Join us Sunday, November 29, 2026, from 1:00 PM to 4:00 PM at
+              18 Ainslie Street South, Cambridge. Meet the team, enjoy
+              refreshments and explore our services, with exclusive
+              promotions and giveaways throughout the afternoon.
+            </p>
+          </div>
+
+          {grandOpeningRsvpUrl ? (
+            <a
+              className="grand-opening-flyer"
+              href={grandOpeningRsvpUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View the MK Studio grand opening invitation and RSVP"
+            >
+              {grandOpeningFlyer}
+            </a>
+          ) : (
+            <div className="grand-opening-flyer">{grandOpeningFlyer}</div>
+          )}
+
+          <div className="grand-opening-action">
+            {grandOpeningRsvpUrl ? (
+              <>
+                <p>
+                  Planning to join us? Add your name and party size to MK Studio&apos;s
+                  private guest list.
+                </p>
+                <a
+                  className="button grand-opening-button"
+                  href={grandOpeningRsvpUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  RSVP for the grand opening <span aria-hidden="true">↗</span>
+                </a>
+              </>
+            ) : (
+              <p>Online RSVPs are not open yet. Check back soon.</p>
+            )}
+          </div>
+        </section>
+
         <section className="services" id="services" aria-labelledby="services-title">
           <div className="service-intro">
             <p className="eyebrow">Treatments</p>
@@ -272,17 +322,17 @@ export default function Home() {
           <div className="ipl-pricing" aria-labelledby="ipl-pricing-title">
             <div className="ipl-pricing-heading">
               <div>
-                <p className="eyebrow">Introductory offer</p>
-                <h3 id="ipl-pricing-title">IPL launch pricing.</h3>
+                <p className="eyebrow">Treatment menu</p>
+                <h3 id="ipl-pricing-title">IPL treatment pricing.</h3>
               </div>
               <p>
-                Regular single-session and package pricing is shown alongside
-                the limited launch offer. For best results, a series of three
-                treatments spaced four to six weeks apart is recommended.
+                Review regular single-session and package pricing below. For
+                best results, a series of three treatments spaced four to six
+                weeks apart is recommended.
               </p>
             </div>
 
-            <div className="ipl-price-grid" aria-label="IPL treatment and launch pricing">
+            <div className="ipl-price-grid" aria-label="IPL treatment pricing">
               {iplPricing.map((treatment) => (
                 <article className="ipl-price-card" key={treatment.name}>
                   <div
@@ -325,24 +375,14 @@ export default function Home() {
                     </div>
 
                     <a
-                      className="ipl-launch-offer"
+                      className="ipl-book-treatment"
                       href={bookingUrl}
                       target="_blank"
                       rel="noreferrer"
                       data-vagaro-booking
                       aria-label={`Book ${treatment.name} IPL treatment`}
                     >
-                      <div className="ipl-launch-main">
-                        <div className="ipl-launch-price">
-                          <strong>{treatment.launch}</strong>
-                          <span>{treatment.launchLabel}</span>
-                          {treatment.regularPackage && <small>Launch special</small>}
-                        </div>
-                        {treatment.savings && <b>{treatment.savings}</b>}
-                      </div>
-                      <span className="ipl-launch-cta">
-                        Book this treatment <span aria-hidden="true">↗</span>
-                      </span>
+                      Book this treatment <span aria-hidden="true">↗</span>
                     </a>
                   </div>
                 </article>
